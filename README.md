@@ -337,6 +337,12 @@ Fuel.upload("/post").sources { request, url ->
 }.responseString { request, response, result ->
 
 }
+
+//upload multi-form data
+.upload("/post", param = listOf("foo" to "bar"))
+   .sources { request, url -> listOf() }
+   .name { "file-name" }
+   .responseString { req, res, result -> }
 ```
 
 ### Authentication
